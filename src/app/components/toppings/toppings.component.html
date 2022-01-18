@@ -1,0 +1,27 @@
+<h1>Select your ingredients:</h1>
+<button type="button" class="btn btn-lg btn-outline-warning" (click)="onBreadClick(bread.type)"
+        *ngFor="let bread of breads">{{ bread.type }}</button>
+<br> <br>
+<button type="button" class="btn btn-lg btn-outline-danger" (click)="onMeatClick(meat.type)"
+        *ngFor="let meat of meats">{{ meat.type }}</button>
+<br> <br>
+<button type="button" class="btn btn-lg btn-outline-info" (click)="onToppingClick(topping)"
+        *ngFor="let topping of toppings">{{ topping.type }}</button>
+<br> <br>
+<h2>Base price: ${{ selectedBurger.basePrice }}</h2>
+<h2>Total price: ${{ totalPrice }}</h2>
+<br>
+<h4>Bread:</h4>
+<h5>{{ selectedBread }}</h5>
+<br>
+<h4>Meat:</h4>
+<h5>{{ selectedMeat }}</h5>
+<br>
+<h4>Toppings:</h4>
+<h5 *ngFor="let topping of toppingsSelected">{{ topping.type }} (${{ topping.price }})</h5>
+
+<br>
+<h4 *ngIf="selectedBurger.extras !== ''">Extras:</h4>
+<h5>{{ selectedBurger.extras }}</h5>
+
+
