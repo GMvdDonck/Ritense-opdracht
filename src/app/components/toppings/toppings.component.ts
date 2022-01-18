@@ -31,6 +31,7 @@ export class ToppingsComponent implements OnInit {
 
   totalPrice: number = 0;
 
+  // Sets all of the selectable ingredients in the page
   constructor(private burgerService: BurgerService) {
     burgerService.getBurgerTypes().subscribe(
       (types) => {
@@ -58,6 +59,7 @@ export class ToppingsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // Changes the selected ingredients for the final product
   public onBreadClick(bread: string) {
     this.selectedBread = bread;
   }

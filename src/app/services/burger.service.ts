@@ -10,11 +10,13 @@ import {Topping} from "../models/Topping";
 })
 export class BurgerService {
 
+  // URL of Spring database
   baseUrl: string = 'http://localhost:8080';
 
   constructor(private httpClient: HttpClient) {
   }
 
+  // Getters for all of the ingredient data from the database
   public getBurgerTypes() {
     return this.httpClient.get<Type[]>(`${this.baseUrl}/types`);
   }
